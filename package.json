@@ -6,11 +6,12 @@
   "license": "MIT",
   "author": "Siddharth Borderwala",
   "engines": {
-    "node": "12.16.2",
+    "node": "12.18.4",
     "yarn": "1.22.4"
   },
   "scripts": {
-    "start": "nodemon"
+    "start": "nodemon",
+    "build": "tsc"
   },
   "devDependencies": {
     "@types/node": "^14.10.2",
