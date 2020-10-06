@@ -2,7 +2,7 @@
   "name": "mega",
   "version": "1.0.0",
   "private": "true",
-  "main": "index.js",
+  "main": "lib/src/index.ts",
   "license": "MIT",
   "author": "Siddharth Borderwala",
   "engines": {
