@@ -1,6 +1,6 @@
-import assertIndex from '../util/assertIndex';
+import assertIndex from '../../util/assertIndex';
 
-class ArrayList<T> {
+export class ArrayList<T> {
   protected length: number;
   protected data: { [key: string]: T };
 
@@ -99,5 +99,3 @@ class ArrayList<T> {
     return;
   }
 }
-
-export { ArrayList as default };
