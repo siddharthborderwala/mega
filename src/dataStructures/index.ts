@@ -1,4 +1,5 @@
 import { ArrayList } from './ArrayList';
-import { HashTable } from './HashTable/HashTable';
+import { HashTable } from './HashTable';
+import { LinkedList } from './LinkedList';
 
-export { ArrayList, HashTable };
+export { ArrayList, HashTable, LinkedList };

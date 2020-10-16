@@ -1,13 +1,13 @@
 {
   "name": "mega",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "private": "true",
   "main": "lib/src/index.ts",
   "license": "MIT",
   "author": "Siddharth Borderwala",
   "engines": {
-    "node": "12.18.4",
-    "yarn": "1.22.4"
+    "node": "14.13.1",
+    "yarn": "1.22.5"
   },
   "scripts": {
     "start": "nodemon",
