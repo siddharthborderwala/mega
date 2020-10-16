@@ -57,7 +57,7 @@ export class LinkedList<T> {
     assertIndex(
       index,
       this.length,
-      `Index should be from 0 to ${this.length}, but received ${index}`,
+      `Index should be from 0 to ${this.length - 1}, but received ${index}`,
       (index, length) => !(index >= 0 && length >= index)
     );
     let node = this.head as Node<T>;
