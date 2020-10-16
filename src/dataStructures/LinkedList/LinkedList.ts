@@ -126,11 +126,12 @@ export class LinkedList<T> {
     return this;
   }
 
-  public remove(value: T): void {
+  public remove(value: T): LinkedList<T> {
     const node: any = this.at(this.findIndex(value) - 1);
     if (!node) throw new Error('Node not found');
     const nodeToDelete = node.next;
     node.next = nodeToDelete && nodeToDelete.next;
     this.length--;
+    return this;
   }
 }
