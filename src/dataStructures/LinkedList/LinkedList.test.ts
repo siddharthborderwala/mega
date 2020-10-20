@@ -28,4 +28,11 @@ describe('LinkedList', (): void => {
     ll.remove(6);
     expect(ll.size).toBe(2);
   });
+
+  it('should reverse', (): void => {
+    const ll = new LinkedList<number>(2);
+    ll.append(4).append(6);
+    ll.reverse().log();
+    expect(1).toBe(1);
+  });
 });

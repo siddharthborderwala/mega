@@ -126,12 +126,51 @@ export class LinkedList<T> {
     return this;
   }
 
+  /**
+   * Remove a node with specific value
+   * @param value The value of node to be removed
+   */
   public remove(value: T): LinkedList<T> {
     const node: any = this.at(this.findIndex(value) - 1);
     if (!node) throw new Error('Node not found');
     const nodeToDelete = node.next;
     node.next = nodeToDelete && nodeToDelete.next;
     this.length--;
+    return this;
+  }
+
+  public pop(index?: number): T {
+    const len = this.length;
+    if (len === 0) throw new Error('List is empty');
+    let node = this.head;
+    if (typeof index === 'undefined')
+      for (let i = 0; i < len - 1; i++) node = node && node.next;
+    else if (typeof index === 'number')
+      for (let i = 0; i < index - 1; i++) node = node && node.next;
+
+    const temp = node.next.next;
+    const val: T = node.next.value;
+
+    delete node.next;
+    node.next = temp;
+    return val;
+  }
+
+  /**
+   * Reverse the linked list
+   */
+  public reverse(): LinkedList<T> {
+    if (this.length <= 1) return this;
+    let first = this.head as Node<T> | null;
+    this.tail = this.head;
+    let second = first?.next as Node<T> | null;
+    while (second !== null) {
+      const temp = second.next as Node<T>;
+      second.next = first;
+      first = second;
+      second = temp;
+    }
+    if (this.head?.next) this.head.next = null;
     return this;
   }
 }
