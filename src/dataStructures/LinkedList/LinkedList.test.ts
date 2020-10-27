@@ -22,17 +22,24 @@ describe('LinkedList', (): void => {
     expect(ll.at(3)?.value).toBe(8);
   });
 
-  it('should remove at index', (): void => {
+  it('should remove a value', (): void => {
     const ll = new LinkedList<number>(2);
     ll.append(4).insert(1, 6);
     ll.remove(6);
     expect(ll.size).toBe(2);
   });
 
+  it('should pop', (): void => {
+    const ll = new LinkedList<number>(1);
+    ll.append(2).append(3).append(4);
+    expect(ll.pop()).toBe(4);
+    expect(ll.pop(1)).toBe(2);
+  });
+
   it('should reverse', (): void => {
     const ll = new LinkedList<number>(2);
     ll.append(4).append(6);
-    ll.reverse().log();
+    // ll.reverse().log();
     expect(1).toBe(1);
   });
 });

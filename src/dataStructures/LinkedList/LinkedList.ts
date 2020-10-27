@@ -139,17 +139,27 @@ export class LinkedList<T> {
     return this;
   }
 
+  /**
+   * Remove an element with its index
+   * @param index {number}
+   */
   public pop(index?: number): T {
     const len = this.length;
     if (len === 0) throw new Error('List is empty');
     let node = this.head;
     if (typeof index === 'undefined')
-      for (let i = 0; i < len - 1; i++) node = node && node.next;
-    else if (typeof index === 'number')
-      for (let i = 0; i < index - 1; i++) node = node && node.next;
+      for (let i = 0; i < len - 2; i++) node = node.next;
+    else if (typeof index === 'number' && index !== 0)
+      for (let i = 0; i < index - 1; i++) node = node.next;
+    else if (typeof index === 'number' && index === 0) {
+      const temp: T = node.value;
+      this.head = node.next;
+      return temp;
+    }
 
-    const temp = node.next.next;
-    const val: T = node.next.value;
+    const toDelete = node.next;
+    const temp = toDelete.next;
+    const val: T = toDelete.value;
 
     delete node.next;
     node.next = temp;
