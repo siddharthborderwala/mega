@@ -1,5 +1,6 @@
 ## Queue
 
+- Limited access data structure
 - FIFO i.e. First In First Out principle
 - e.g. Callback Queue
 - Widely used Data Structure

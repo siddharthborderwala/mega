@@ -1,5 +1,6 @@
 ## Stack
 
+- Limited access data structure
 - LIFO i.e. Last In First Out principle
 - e.g. Call Stacks
 - Widely used Data Structure
